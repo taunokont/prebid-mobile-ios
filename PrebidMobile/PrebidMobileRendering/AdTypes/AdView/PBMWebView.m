@@ -380,7 +380,8 @@ static NSString * const KeyPathOutputVolume = @"outputVolume";
             return;
         }
         
-        if ([readyState isEqualToString:@"complete"]) {
+        if ([readyState isEqualToString:@"complete"] || 
+            [readyState isEqualToString:@"interactive"]) {
             self.state = PBMWebViewStateLoaded;
             self.isPollingForDocumentReady = NO;
             [self.delegate webViewReadyToDisplay:self];
